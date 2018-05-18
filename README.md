@@ -39,7 +39,7 @@ specified as environment variables:
 An example invocation:
 
 ```
-NGINX_VERSION=14 MOD_URL=https://github.com/mwhipple/ngx_upstream_jdomain.git make module
+NGINX_VERSION_ARG=14 MOD_URL=https://github.com/mwhipple/ngx_upstream_jdomain.git MOD_NAME= jdomain make module
 ```
 
 The resulting packages will be created in the `build/modules/` project directory.
