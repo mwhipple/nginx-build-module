@@ -28,7 +28,7 @@ both the pkg-oss `build_module.sh` script and the nginx standard Docker images
 ### How to Build Modules
 
 A Makefile is provided to assist in building and working with the created
-Docker container. The Makefile currently requires two parameters which are
+Docker container. The Makefile currently requires three parameters which are
 specified as environment variables:
 
 - `NGINX_VERSION_ARG` - The argument to pass to specify the nginx version. For Nginx Plus the value will be something like `-r 14`, for Nginx OSS the value will be something like `-v 1.14.0` (See `build_module.sh`)
@@ -39,7 +39,7 @@ specified as environment variables:
 An example invocation:
 
 ```
-NGINX_VERSION_ARG=14 MOD_URL=https://github.com/mwhipple/ngx_upstream_jdomain.git MOD_NAME= jdomain make module
+NGINX_VERSION_ARG=14 MOD_URL=https://github.com/mwhipple/ngx_upstream_jdomain.git MOD_NAME=jdomain make module
 ```
 
 The resulting packages will be created in the `build/modules/` project directory.
