@@ -1,6 +1,6 @@
 FROM debian:stretch-slim
 
-COPY build_module.sh /
+ADD vendor/build_module.sh /
 WORKDIR /
 
 RUN apt-get update \
