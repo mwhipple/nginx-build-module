@@ -1,6 +1,8 @@
 FROM debian:stretch-slim
 
+# This script is downloaded from http://hg.nginx.org/pkg-oss/raw-file/default/build_module.sh
 ADD vendor/build_module.sh /
+
 WORKDIR /
 
 RUN apt-get update \
