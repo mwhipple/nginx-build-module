@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-#
-# build_module.sh (c) NGINX, Inc. [v0.12 30-Aug-2017] Liam Crilly <liam.crilly@nginx.com>
+
 # This script is downloaded from http://hg.nginx.org/pkg-oss/raw-file/default/build_module.sh
+
+# build_module.sh (c) NGINX, Inc. [v0.12 30-Aug-2017] Liam Crilly <liam.crilly@nginx.com>
 # This script supports apt(8) and yum(8) package managers. Installs the minimum
 # necessary prerequisite packages to build 3rd party modules for NGINX Plus.
 # Obtains source for module and NGINX OSS, prepares for pkg-oss tool. Inspects
