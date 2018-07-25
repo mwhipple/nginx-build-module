@@ -1,5 +1,5 @@
 export APP_NAME      = nginx_build_module
-export VERSION       = 0.1.0
+export VERSION       = 0.1.1
 export BUILD_DIR     = build/
 export MOD_BUILD_DIR = ${BUILD_DIR}/modules/
 DOCKER_ORG           = mwhipple
