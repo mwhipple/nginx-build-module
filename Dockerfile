@@ -20,9 +20,10 @@ RUN apt-get update \
        libssl-dev \
        libpcre3-dev \
        zlib1g-dev \
-       unzip \
-    && cd / \
-    && wget http://hg.nginx.org/pkg-oss/raw-file/default/build_module.sh \
-    && chmod a+x build_module.sh
+       unzip
+
+COPY vendor/build_module.sh /
+WORKDIR /
+RUN chmod a+x build_module.sh
 
 ENTRYPOINT ["/build_module.sh"]
