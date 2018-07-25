@@ -1,10 +1,5 @@
 FROM debian:stretch-slim
 
-# This script is downloaded from http://hg.nginx.org/pkg-oss/raw-file/default/build_module.sh
-ADD vendor/build_module.sh /
-
-WORKDIR /
-
 RUN apt-get update \
     && apt-get install --no-install-recommends --no-install-suggests -y \
        wget \
@@ -25,7 +20,10 @@ RUN apt-get update \
        libssl-dev \
        libpcre3-dev \
        zlib1g-dev \
-       unzip \
-    && chmod a+x build_module.sh
+       unzip
+
+COPY vendor/build_module.sh /
+WORKDIR /
+RUN chmod a+x build_module.sh
 
 ENTRYPOINT ["/build_module.sh"]
