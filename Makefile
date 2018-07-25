@@ -1,7 +1,8 @@
 export APP_NAME      = nginx_build_module
-export VERSION       = 0.0.1
+export VERSION       = 0.1.0
 export BUILD_DIR     = build/
 export MOD_BUILD_DIR = ${BUILD_DIR}/modules/
+DOCKER_ORG           = mwhipple
 
 DOCKER_BIN          ?= docker
 GIT_BIN             ?= git
@@ -21,7 +22,7 @@ ${MOD_BUILD_DIR}:
 dockerImage: ${IIDFILE}
 ${IIDFILE}: ${SRC_OBJ} | ${BUILD_DIR}
 	${DOCKER_BIN} build \
-		--tag ${APP_NAME}:${VERSION} \
+		--tag ${DOCKER_ORG}/${APP_NAME}:${VERSION} \
 		--iidfile $@ .
 
 .PHONY: module
