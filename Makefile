@@ -1,5 +1,5 @@
 export APP_NAME      = nginx_build_module
-export VERSION       = 0.1.0
+export VERSION       = 0.1.1
 export BUILD_DIR     = build/
 export MOD_BUILD_DIR = ${BUILD_DIR}/modules/
 DOCKER_ORG           = mwhipple
@@ -29,7 +29,7 @@ ${IIDFILE}: ${SRC_OBJ} | ${BUILD_DIR}
 module: ${IIDFILE} | ${MOD_BUILD_DIR}
 	${DOCKER_BIN} run \
 		--mount type=bind,source=$(realpath ${MOD_BUILD_DIR}),target=/mod_build \
-		${APP_NAME}:${VERSION} -y \
+		${DOCKER_ORG}/${APP_NAME}:${VERSION} -y \
 			${NGINX_VERSION_ARG} \
 			-o /mod_build \
 			-n ${MOD_NAME} \
